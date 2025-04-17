@@ -2,7 +2,7 @@
 // se declara la funcion  y se resiven dos parámetros: a y b.
 function cualEsMayor(a, b) {
     // se utiliza un operador ternario para comparar los dos números y devolver el mayor.
-    return (a > b) ? a : b;
+    return (a > b) ? a : b;// si a es mayor que b, se devuelve a, de lo contrario se devuelve b.
 }
 // se llama a la función con dos números y se almacena el resultado en la variable mayor.
 // se imprime el resultado en la consola.
