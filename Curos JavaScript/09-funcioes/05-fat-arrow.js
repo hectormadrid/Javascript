@@ -12,4 +12,4 @@ const suma = (a, b) => {
   return total; */
 }
 
-console.log(suma(1,2,3,4));
+console.log(suma(1,2)); 
