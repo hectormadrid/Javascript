@@ -42,9 +42,9 @@ user.password = '123456';
 user.save(); */
 
 //? Herencia: Creamos una clase Usuario que hereda de una clase Persona, reutilizando sus propiedades y métodos.
-User
-restaurante
-motociclista
+//User
+//restaurante
+//motociclista
 //? Ejemplo de herencia en JavaScript
 /*
  * en JavaScript para nosotros poder heredar métodos
