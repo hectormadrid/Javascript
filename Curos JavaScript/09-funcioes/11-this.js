@@ -4,7 +4,7 @@
 //new hace referencia al objeto que se esta creando en ese momento
 
 // los metodos son funciones que estan dentro de un objeto
-/* const user = {
+ const user = {
     name: 'Juan',
     login(){
         console.log(this);
@@ -14,7 +14,7 @@
 user.logout = function logout (){
     console.log(this);
 }
-user.logout();  */// this hace referencia al objeto user
+user.logout();  // this hace referencia al objeto user
 
 
 /* 
@@ -24,13 +24,13 @@ function log(){
 
 log(); // this hace referencia al objeto window */
 
-function Log(mensaje){
+/* function Log(mensaje){
     this.mensaje = mensaje;
     console.log(this);
 
 }
 
-const l = new Log('Hola Mundo'); //  
+const l = new Log('Hola Mundo');  *///  
 /**
  * Cuando usamos new, pasan 4 cosas:
  * se crea un obejto literal
