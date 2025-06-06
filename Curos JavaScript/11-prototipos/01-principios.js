@@ -52,7 +52,8 @@ user.save(); */
  * Pueden utilizar estos métodos y propiedades que nosotros le agregamos a la función constructora padre.
  */
 
-//?Polimorfismo: Permitimos que diferentes clases implementen el método getNombreCompleto de manera diferente, adaptándose a sus propias necesidades.
+//?Polimorfismo: Permitimos que diferentes clases implementen el método getNombreCompleto de manera diferente, 
+//? adaptándose a sus propias necesidades.
 function validarEntidad(entidad){
     //...
 
