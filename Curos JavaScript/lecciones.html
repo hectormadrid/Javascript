@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <link rel="stylesheet" href="visor/visor.css">
+</head>
+<body>
+    <header class="barra">
+        <button id="menu" class="boton boton--menu" aria-controls="indice" aria-expanded="false">☰ Lecciones</button>
+        <a href="#" class="marca"><span class="marca__logo">JS</span> <span class="marca__texto">Curso de JavaScript</span></a>
+        <div class="progreso" title="Lecciones marcadas como vistas">
+            <div class="progreso__barra"><span id="progreso-relleno"></span></div>
+            <span id="progreso-texto"></span>
+        </div>
+    </header>
+
+    <div class="layout">
+        <nav id="indice" class="indice" aria-label="Índice del curso"></nav>
+        <main id="contenido" class="contenido"></main>
+    </div>
+
+    <script src="visor/curso.js"></script>
+    <script src="visor/visor.js"></script>
+</body>
+</html>

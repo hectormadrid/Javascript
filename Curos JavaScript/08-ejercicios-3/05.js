@@ -12,7 +12,7 @@ function obtenerMayor(arr) {
       mayor = usuario;
     }
    
-    /* return usuario.reduce((acc, el) => el.edad > acc.edad ? el : acc); */
+    /* return arr.reduce((acc, el) => el.edad > acc.edad ? el : acc); */
   }
    return mayor;
 }

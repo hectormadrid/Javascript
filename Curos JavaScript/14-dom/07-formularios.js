@@ -12,21 +12,22 @@ let initailValues = {// Valores iniciales del formulario
   name: "",
   lastname: "",
 };
-let render = ({ data, errors }) => {// Función para renderizar el formulario
-
-  return `<form name='formulario'>
+let render = ({ data, errors }) => {// Función para renderizar el contenido del formulario
+  // Solo devuelve lo que va dentro: el <form> se crea más abajo con createElement.
+  // Si hay un error en un campo, se muestra al lado (errors.name || "" evita que salga "undefined").
+  // Ojo: dentro de un template literal no se pueden poner comentarios con //, se verían en la página.
+  return `
     <div>
     <label>Nombre:</label>
-    <input name = "name" value =" ${data.name}"/>//
-    ${errors.name || ""}// Si hay un error en el nombre, mostrarlo
+    <input name = "name" value ="${data.name}"/>
+    ${errors.name || ""}
     </div>
     <div>
     <label>Apellido:</label>
-    <input name = "lastname" value"${data.lastname}"/>
-    ${errors.lastname || ""}// Si hay un error en el apellido, mostrarlo
+    <input name = "lastname" value ="${data.lastname}"/>
+    ${errors.lastname || ""}
     </div>
-    <div><button>Enviar</button></div>
-    </form>`;
+    <div><button>Enviar</button></div>`;
 };
 
 let form = document.createElement("form"); // Crear un elemento de formulario
@@ -48,4 +49,6 @@ form.addEventListener("submit", (e) => {// Manejar el evento de envío del formu
     form.innerHTML = html;
     return;
   }
+  console.log("Formulario enviado:", data); // Si no hay errores, mostrar los datos enviados
+  form.innerHTML = render({ data: initailValues, errors: {} }); // Vaciar el formulario
 });

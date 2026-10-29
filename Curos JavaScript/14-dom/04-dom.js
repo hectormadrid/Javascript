@@ -27,4 +27,4 @@ document.body.insertAdjacentElement('beforeend', div);// Inserta un elemento al 
 document.body.insertAdjacentElement('afterend', div); // Inserta un elemento despues del body
 
 document.body.insertAdjacentHTML('beforebegin', '<p>Hola</p>'); // Inserta HTML antes del body
-document.body.insertAdjacentText(); // Inserta HTML al inicio del body
+document.body.insertAdjacentText('afterbegin', 'Hola'); // Inserta texto (no HTML) al inicio del body

@@ -4,6 +4,14 @@ let serialize = (target) =>
     acc[el.name] = el.value;
     return acc;
   }, {});
+// escapa los caracteres especiales para que el texto del usuario no se interprete como HTML
+let escapeHTML = (str) =>
+  String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 class User {
   static #url = "https://jsonplaceholder.typicode.com/users"; // # para hacer privada y static par que solo se use en la clase
   static #users = [];
@@ -62,11 +70,16 @@ class User {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
       });
+      if (!response.ok) throw response;
 
       const data = await response.json();
       this.#users.unshift(data);
       this.#ul.prepend(this.renderUser(data));
-
+      // se vacia el formulario despues de guardar
+      this.#form.innerHTML = this.formHTML({
+        data: this.#initialValues,
+        errors: {},
+      });
     } catch (e) {
       console.log("error", e);
     }
@@ -83,20 +96,19 @@ class User {
     return errors;
   }
   static formHTML({ data, errors }) {
+    // solo el contenido: el <form> ya existe en this.#form
     return `
-    <form>
         <div>
-        <label>Nombre:<label>
-        <input name = "name" value ="${data.name}"/>
+        <label>Nombre:</label>
+        <input name = "name" value ="${escapeHTML(data.name)}"/>
         ${errors.name || ""}
         </div>
           <div>
-        <label>Correo:<label>
-        <input name = "email" value ="${data.email}"/>
+        <label>Correo:</label>
+        <input name = "email" value ="${escapeHTML(data.email)}"/>
         ${errors.email || ""}
         </div>
-        <input type ="submit" value= "Enviar" />
-    </form>`;
+        <input type ="submit" value= "Enviar" />`;
   }
   static renderForm() {
     this.#form.onsubmit = this.onSubmit.bind(this);

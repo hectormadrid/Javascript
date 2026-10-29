@@ -6,7 +6,7 @@ const usuario = [
 ];
 
 function cantidadPremium(usuario){
- return usuario.reduce((acc, el)=> el.plan !== 'Premium' ? acc + 1 : acc, 0);
+ return usuario.reduce((acc, el)=> el.plan === 'Premium' ? acc + 1 : acc, 0);
 }
 function cantidadMayores(usuario){
     return usuario.reduce((acc, el)=> el.edad >= 18 ? acc + 1 : acc, 0);
