@@ -18,8 +18,8 @@ let user = {
 // y se imprime el nombre de la propiedad y su valor
 
 // se declara una variebla pro para iterar las propiedades del objeto user
-for (let pro in user ){
-console.log(pro ,user[pro]);
+for (let User in user ){
+console.log(User ,user[User]);
 
 }
 
